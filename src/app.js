@@ -34,6 +34,12 @@ class Game {
         this.entities = [];
         this.score = 0;
 
+         //cada ves que el usuario se mueva, se actualiza el score
+         window.addEventListener( 'keydown', e => {
+            this.update( );
+            this.render( )
+        })
+
         this.init( );
     }
 
@@ -63,11 +69,7 @@ class Game {
 
     createPlayer( ) {
         new Player( this, 1, 1, this.tileSize, this.tileSize );
-        //cada ves que el usuario se mueva, se actualiza el score
-        window.addEventListener( 'keydown', e => {
-            this.update( );
-            this.render( )
-        })
+       
     }
 
     createCoins( numcoins ) {
